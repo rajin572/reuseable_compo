@@ -3,8 +3,8 @@ import Navbar from "./Navbar";
 
 const MainLayout = () => {
   return (
-    <div>
-      <div className="sticky top-0">
+    <div className="relative">
+      <div className="navbar">
         <Navbar />
       </div>
       <Outlet />

@@ -1,23 +1,24 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Button from "../ui/Button";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <header className="w-full py-3 px-5 md:px-10 lg:px-15 flex justify-between items-center bg-violet-500 z-50 ">
+    <header className="w-full py-3 px-5 md:px-10 lg:px-15 flex justify-between items-center bg-primary z-50 text-primary">
       {/* //*Company name */}
       <div>
-        <h2 className="text-3xl cursor-pointer">AI</h2>
+        <h3 className=" cursor-pointer">AI</h3>
       </div>
       {/* //*Nav links */}
       <nav
         className={
           mobileMenuOpen
-            ? " lg:w-[40%] w-full lg:static absolute top-[50px] left-0 lg:bg-none bg-violet-500 transition-all lg:z-0 -z-50 lg:border-none border-b-2 border-lime-400"
-            : " lg:w-[40%] w-full lg:static absolute top-[-300px] left-0 transition-all lg:z-0 -z-50"
+            ? "w-full lg:static absolute top-[50px] left-0 lg:bg-none bg-primary transition-all lg:z-0 -z-50 lg:border-none border-b-2 border-secoundary"
+            : "w-full lg:static absolute top-[-300px] left-0 transition-all lg:z-0 -z-50"
         }
       >
-        <ul className="flex justify-end gap-5 items-center lg:flex-row flex-col lg:py-0 py-10">
+        <ul className="nav-items">
           <li className="lg:mb-0 mb-5 cursor-pointer group relative">
             <Link className="px-4 py-1" to="/">
               Home
@@ -38,14 +39,11 @@ const Navbar = () => {
               Link
             </Link>
           </li>
-          {/* <li className="lg:mb-0 cursor-pointer">
-            <a
-              href="#"
-              className="px-3 py-1 rounded border-2 border-lime-400 font-bold bg-slate-100 text-lime-400 hover:bg-lime-400 hover:text-slate-950"
-            >
-              Join Discord
-            </a>
-          </li> */}
+          <li className="lg:mb-0 mb-5 cursor-pointer group relative">
+            <Link to="/">
+              <Button>Join Discord</Button>
+            </Link>
+          </li>
         </ul>
       </nav>
       {/* //*Icons */}

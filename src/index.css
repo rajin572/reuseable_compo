@@ -1,3 +1,25 @@
+@import "./style/typrography.css";
+@import "./style/navbar.css";
+@import "./style/button.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .border-primary {
+    @apply border-purple-400;
+  }
+  .border-secoundary {
+    @apply border-white;
+  }
+  .bg-primary {
+    @apply bg-purple-500;
+  }
+  .bg-secoundary {
+    @apply bg-lime-500;
+  }
+  .text-primary {
+    @apply text-white;
+  }
+}
